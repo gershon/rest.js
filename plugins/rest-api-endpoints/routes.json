@@ -938,7 +938,7 @@
       "method": "POST",
       "params": {
         "actions": {
-          "type": "object[]"
+          "type": "array"
         },
         "actions[].description": {
           "required": true,
@@ -984,7 +984,7 @@
           "type": "object"
         },
         "output.annotations": {
-          "type": "object[]"
+          "type": "array"
         },
         "output.annotations[].annotation_level": {
           "enum": [
@@ -1024,7 +1024,7 @@
           "type": "string"
         },
         "output.images": {
-          "type": "object[]"
+          "type": "array"
         },
         "output.images[].alt": {
           "required": true,
@@ -1311,7 +1311,7 @@
       "method": "PATCH",
       "params": {
         "auto_trigger_checks": {
-          "type": "object[]"
+          "type": "array"
         },
         "auto_trigger_checks[].app_id": {
           "required": true,
@@ -1339,7 +1339,7 @@
       "method": "PATCH",
       "params": {
         "actions": {
-          "type": "object[]"
+          "type": "array"
         },
         "actions[].description": {
           "required": true,
@@ -1384,7 +1384,7 @@
           "type": "object"
         },
         "output.annotations": {
-          "type": "object[]"
+          "type": "array"
         },
         "output.annotations[].annotation_level": {
           "enum": [
@@ -1424,7 +1424,7 @@
           "type": "string"
         },
         "output.images": {
-          "type": "object[]"
+          "type": "array"
         },
         "output.images[].alt": {
           "required": true,
@@ -1865,7 +1865,7 @@
         },
         "parents": {
           "required": true,
-          "type": "string[]"
+          "type": "array"
         },
         "repo": {
           "required": true,
@@ -1966,7 +1966,7 @@
         },
         "tree": {
           "required": true,
-          "type": "object[]"
+          "type": "array"
         },
         "tree[].content": {
           "type": "string"
@@ -2111,29 +2111,6 @@
         }
       },
       "url": "/repos/:owner/:repo/git/trees/:tree_sha"
-    },
-    "listRefs": {
-      "method": "GET",
-      "params": {
-        "namespace": {
-          "type": "string"
-        },
-        "owner": {
-          "required": true,
-          "type": "string"
-        },
-        "page": {
-          "type": "integer"
-        },
-        "per_page": {
-          "type": "integer"
-        },
-        "repo": {
-          "required": true,
-          "type": "string"
-        }
-      },
-      "url": "/repos/:owner/:repo/git/refs/:namespace"
     },
     "updateRef": {
       "method": "PATCH",
@@ -2293,7 +2270,7 @@
       "method": "POST",
       "params": {
         "assignees": {
-          "type": "string[]"
+          "type": "array"
         },
         "issue_number": {
           "required": true,
@@ -2324,7 +2301,7 @@
         },
         "labels": {
           "required": true,
-          "type": "string[]"
+          "type": "array"
         },
         "number": {
           "alias": "issue_number",
@@ -2367,13 +2344,13 @@
           "type": "string"
         },
         "assignees": {
-          "type": "string[]"
+          "type": "array"
         },
         "body": {
           "type": "string"
         },
         "labels": {
-          "type": "string[]"
+          "type": "array"
         },
         "milestone": {
           "type": "integer"
@@ -3179,7 +3156,7 @@
       "method": "DELETE",
       "params": {
         "assignees": {
-          "type": "string[]"
+          "type": "array"
         },
         "issue_number": {
           "required": true,
@@ -3259,7 +3236,7 @@
           "type": "integer"
         },
         "labels": {
-          "type": "string[]"
+          "type": "array"
         },
         "number": {
           "alias": "issue_number",
@@ -3307,7 +3284,7 @@
           "type": "string"
         },
         "assignees": {
-          "type": "string[]"
+          "type": "array"
         },
         "body": {
           "type": "string"
@@ -3317,10 +3294,9 @@
           "type": "integer"
         },
         "labels": {
-          "type": "string[]"
+          "type": "array"
         },
         "milestone": {
-          "allowNull": true,
           "type": "integer"
         },
         "number": {
@@ -3370,33 +3346,6 @@
         }
       },
       "url": "/repos/:owner/:repo/issues/comments/:comment_id"
-    },
-    "updateLabel": {
-      "method": "PATCH",
-      "params": {
-        "color": {
-          "type": "string"
-        },
-        "current_name": {
-          "required": true,
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "owner": {
-          "required": true,
-          "type": "string"
-        },
-        "repo": {
-          "required": true,
-          "type": "string"
-        }
-      },
-      "url": "/repos/:owner/:repo/labels/:current_name"
     },
     "updateMilestone": {
       "method": "PATCH",
@@ -3497,13 +3446,9 @@
       "url": "/markdown"
     },
     "renderRaw": {
-      "headers": {
-        "content-type": "text/plain; charset=utf-8"
-      },
       "method": "POST",
       "params": {
         "data": {
-          "mapTo": "data",
           "required": true,
           "type": "string"
         }
@@ -3777,7 +3722,7 @@
         },
         "repositories": {
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/user/migrations"
@@ -3797,7 +3742,7 @@
         },
         "repositories": {
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/orgs/:org/migrations"
@@ -3938,7 +3883,7 @@
           "type": "string"
         },
         "scopes": {
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/authorizations"
@@ -4004,7 +3949,7 @@
           "type": "string"
         },
         "scopes": {
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/authorizations/clients/:client_id"
@@ -4031,7 +3976,7 @@
           "type": "string"
         },
         "scopes": {
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/authorizations/clients/:client_id/:fingerprint"
@@ -4059,7 +4004,7 @@
           "type": "string"
         },
         "scopes": {
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/authorizations/clients/:client_id/:fingerprint"
@@ -4134,7 +4079,7 @@
       "method": "PATCH",
       "params": {
         "add_scopes": {
-          "type": "string[]"
+          "type": "array"
         },
         "authorization_id": {
           "required": true,
@@ -4150,10 +4095,10 @@
           "type": "string"
         },
         "remove_scopes": {
-          "type": "string[]"
+          "type": "array"
         },
         "scopes": {
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/authorizations/:authorization_id"
@@ -4289,7 +4234,7 @@
           "type": "string"
         },
         "events": {
-          "type": "string[]"
+          "type": "array"
         },
         "name": {
           "required": true,
@@ -4324,7 +4269,7 @@
           "type": "string"
         },
         "team_ids": {
-          "type": "integer[]"
+          "type": "array"
         }
       },
       "url": "/orgs/:org/invitations"
@@ -4746,7 +4691,7 @@
           "type": "string"
         },
         "events": {
-          "type": "string[]"
+          "type": "array"
         },
         "hook_id": {
           "required": true,
@@ -5177,8 +5122,7 @@
         },
         "position": {
           "required": true,
-          "type": "string",
-          "validation": "^(top|bottom|after:\\d+)$"
+          "type": "string"
         }
       },
       "url": "/projects/columns/cards/:card_id/moves"
@@ -5195,8 +5139,7 @@
         },
         "position": {
           "required": true,
-          "type": "string",
-          "validation": "^(first|last|after:\\d+)$"
+          "type": "string"
         }
       },
       "url": "/projects/columns/:column_id/moves"
@@ -5334,80 +5277,6 @@
       },
       "url": "/repos/:owner/:repo/pulls/:pull_number/merge"
     },
-    "create": {
-      "method": "POST",
-      "params": {
-        "base": {
-          "required": true,
-          "type": "string"
-        },
-        "body": {
-          "type": "string"
-        },
-        "draft": {
-          "type": "boolean"
-        },
-        "head": {
-          "required": true,
-          "type": "string"
-        },
-        "maintainer_can_modify": {
-          "type": "boolean"
-        },
-        "owner": {
-          "required": true,
-          "type": "string"
-        },
-        "repo": {
-          "required": true,
-          "type": "string"
-        },
-        "title": {
-          "required": true,
-          "type": "string"
-        }
-      },
-      "url": "/repos/:owner/:repo/pulls"
-    },
-    "createComment": {
-      "method": "POST",
-      "params": {
-        "body": {
-          "required": true,
-          "type": "string"
-        },
-        "commit_id": {
-          "required": true,
-          "type": "string"
-        },
-        "number": {
-          "alias": "pull_number",
-          "deprecated": true,
-          "type": "integer"
-        },
-        "owner": {
-          "required": true,
-          "type": "string"
-        },
-        "path": {
-          "required": true,
-          "type": "string"
-        },
-        "position": {
-          "required": true,
-          "type": "integer"
-        },
-        "pull_number": {
-          "required": true,
-          "type": "integer"
-        },
-        "repo": {
-          "required": true,
-          "type": "string"
-        }
-      },
-      "url": "/repos/:owner/:repo/pulls/:pull_number/comments"
-    },
     "createCommentReply": {
       "method": "POST",
       "params": {
@@ -5478,7 +5347,7 @@
           "type": "string"
         },
         "comments": {
-          "type": "object[]"
+          "type": "array"
         },
         "comments[].body": {
           "required": true,
@@ -5544,10 +5413,10 @@
           "type": "string"
         },
         "reviewers": {
-          "type": "string[]"
+          "type": "array"
         },
         "team_reviewers": {
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers"
@@ -5618,10 +5487,10 @@
           "type": "string"
         },
         "reviewers": {
-          "type": "string[]"
+          "type": "array"
         },
         "team_reviewers": {
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers"
@@ -6740,9 +6609,8 @@
           "type": "string"
         },
         "contexts": {
-          "mapTo": "data",
           "required": true,
-          "type": "string[]"
+          "type": "array"
         },
         "owner": {
           "required": true,
@@ -6771,9 +6639,8 @@
           "type": "string"
         },
         "teams": {
-          "mapTo": "data",
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams"
@@ -6794,9 +6661,8 @@
           "type": "string"
         },
         "users": {
-          "mapTo": "data",
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/branches/:branch/protection/restrictions/users"
@@ -6841,37 +6707,6 @@
       },
       "url": "/repos/:owner/:repo/compare/:base...:head"
     },
-    "createCommitComment": {
-      "method": "POST",
-      "params": {
-        "body": {
-          "required": true,
-          "type": "string"
-        },
-        "line": {
-          "type": "integer"
-        },
-        "owner": {
-          "required": true,
-          "type": "string"
-        },
-        "path": {
-          "type": "string"
-        },
-        "position": {
-          "type": "integer"
-        },
-        "repo": {
-          "required": true,
-          "type": "string"
-        },
-        "sha": {
-          "required": true,
-          "type": "string"
-        }
-      },
-      "url": "/repos/:owner/:repo/commits/:sha/comments"
-    },
     "createDeployment": {
       "method": "POST",
       "params": {
@@ -6903,7 +6738,7 @@
           "type": "string"
         },
         "required_contexts": {
-          "type": "string[]"
+          "type": "array"
         },
         "task": {
           "type": "string"
@@ -6967,57 +6802,6 @@
         }
       },
       "url": "/repos/:owner/:repo/deployments/:deployment_id/statuses"
-    },
-    "createFile": {
-      "method": "PUT",
-      "params": {
-        "author": {
-          "type": "object"
-        },
-        "author.email": {
-          "required": true,
-          "type": "string"
-        },
-        "author.name": {
-          "required": true,
-          "type": "string"
-        },
-        "branch": {
-          "type": "string"
-        },
-        "committer": {
-          "type": "object"
-        },
-        "committer.email": {
-          "required": true,
-          "type": "string"
-        },
-        "committer.name": {
-          "required": true,
-          "type": "string"
-        },
-        "content": {
-          "required": true,
-          "type": "string"
-        },
-        "message": {
-          "required": true,
-          "type": "string"
-        },
-        "owner": {
-          "required": true,
-          "type": "string"
-        },
-        "path": {
-          "required": true,
-          "type": "string"
-        },
-        "repo": {
-          "required": true,
-          "type": "string"
-        }
-      },
-      "url": "/repos/:owner/:repo/contents/:path"
     },
     "createForAuthenticatedUser": {
       "method": "POST",
@@ -7109,7 +6893,7 @@
           "type": "string"
         },
         "events": {
-          "type": "string[]"
+          "type": "array"
         },
         "name": {
           "type": "string"
@@ -7693,25 +7477,6 @@
         }
       },
       "url": "/repos/:owner/:repo/comments/:comment_id"
-    },
-    "getCommitRefSha": {
-      "deprecated": "\"Get the SHA-1 of a commit reference\" will be removed. Use \"Get a single commit\" instead with medaType format \"sha\" instead.",
-      "method": "GET",
-      "params": {
-        "owner": {
-          "required": true,
-          "type": "string"
-        },
-        "ref": {
-          "required": true,
-          "type": "string"
-        },
-        "repo": {
-          "required": true,
-          "type": "string"
-        }
-      },
-      "url": "/repos/:owner/:repo/commits/:ref"
     },
     "getContents": {
       "method": "GET",
@@ -9063,9 +8828,8 @@
           "type": "string"
         },
         "contexts": {
-          "mapTo": "data",
           "required": true,
-          "type": "string[]"
+          "type": "array"
         },
         "owner": {
           "required": true,
@@ -9112,9 +8876,8 @@
           "type": "string"
         },
         "teams": {
-          "mapTo": "data",
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams"
@@ -9135,9 +8898,8 @@
           "type": "string"
         },
         "users": {
-          "mapTo": "data",
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/branches/:branch/protection/restrictions/users"
@@ -9150,9 +8912,8 @@
           "type": "string"
         },
         "contexts": {
-          "mapTo": "data",
           "required": true,
-          "type": "string[]"
+          "type": "array"
         },
         "owner": {
           "required": true,
@@ -9181,9 +8942,8 @@
           "type": "string"
         },
         "teams": {
-          "mapTo": "data",
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams"
@@ -9204,9 +8964,8 @@
           "type": "string"
         },
         "users": {
-          "mapTo": "data",
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/branches/:branch/protection/restrictions/users"
@@ -9216,7 +8975,7 @@
       "params": {
         "names": {
           "required": true,
-          "type": "string[]"
+          "type": "array"
         },
         "owner": {
           "required": true,
@@ -9296,7 +9055,7 @@
           "type": "string"
         },
         "team_ids": {
-          "type": "integer[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/transfer"
@@ -9360,7 +9119,6 @@
           "type": "string"
         },
         "enforce_admins": {
-          "allowNull": true,
           "required": true,
           "type": "boolean"
         },
@@ -9373,7 +9131,6 @@
           "type": "string"
         },
         "required_pull_request_reviews": {
-          "allowNull": true,
           "required": true,
           "type": "object"
         },
@@ -9384,10 +9141,10 @@
           "type": "object"
         },
         "required_pull_request_reviews.dismissal_restrictions.teams": {
-          "type": "string[]"
+          "type": "array"
         },
         "required_pull_request_reviews.dismissal_restrictions.users": {
-          "type": "string[]"
+          "type": "array"
         },
         "required_pull_request_reviews.require_code_owner_reviews": {
           "type": "boolean"
@@ -9396,28 +9153,26 @@
           "type": "integer"
         },
         "required_status_checks": {
-          "allowNull": true,
           "required": true,
           "type": "object"
         },
         "required_status_checks.contexts": {
           "required": true,
-          "type": "string[]"
+          "type": "array"
         },
         "required_status_checks.strict": {
           "required": true,
           "type": "boolean"
         },
         "restrictions": {
-          "allowNull": true,
           "required": true,
           "type": "object"
         },
         "restrictions.teams": {
-          "type": "string[]"
+          "type": "array"
         },
         "restrictions.users": {
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/repos/:owner/:repo/branches/:branch/protection"
@@ -9506,7 +9261,7 @@
           "type": "boolean"
         },
         "add_events": {
-          "type": "string[]"
+          "type": "array"
         },
         "config": {
           "type": "object"
@@ -9525,7 +9280,7 @@
           "type": "string"
         },
         "events": {
-          "type": "string[]"
+          "type": "array"
         },
         "hook_id": {
           "required": true,
@@ -9536,7 +9291,7 @@
           "type": "string"
         },
         "remove_events": {
-          "type": "string[]"
+          "type": "array"
         },
         "repo": {
           "required": true,
@@ -9610,10 +9365,10 @@
           "type": "object"
         },
         "dismissal_restrictions.teams": {
-          "type": "string[]"
+          "type": "array"
         },
         "dismissal_restrictions.users": {
-          "type": "string[]"
+          "type": "array"
         },
         "owner": {
           "required": true,
@@ -9640,7 +9395,7 @@
           "type": "string"
         },
         "contexts": {
-          "type": "string[]"
+          "type": "array"
         },
         "owner": {
           "required": true,
@@ -9715,40 +9470,6 @@
         }
       },
       "url": "/repos/:owner/:repo/releases/assets/:asset_id"
-    },
-    "uploadReleaseAsset": {
-      "method": "POST",
-      "params": {
-        "file": {
-          "mapTo": "data",
-          "required": true,
-          "type": "string | object"
-        },
-        "headers": {
-          "required": true,
-          "type": "object"
-        },
-        "headers.content-length": {
-          "required": true,
-          "type": "integer"
-        },
-        "headers.content-type": {
-          "required": true,
-          "type": "string"
-        },
-        "label": {
-          "type": "string"
-        },
-        "name": {
-          "required": true,
-          "type": "string"
-        },
-        "url": {
-          "required": true,
-          "type": "string"
-        }
-      },
-      "url": ":url"
     }
   },
   "search": {
@@ -10107,7 +9828,7 @@
           "type": "string"
         },
         "maintainers": {
-          "type": "string[]"
+          "type": "array"
         },
         "name": {
           "required": true,
@@ -10136,7 +9857,7 @@
           "type": "string"
         },
         "repo_names": {
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/orgs/:org/teams"
@@ -10665,7 +10386,7 @@
       "params": {
         "emails": {
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/user/emails"
@@ -10740,7 +10461,7 @@
       "params": {
         "emails": {
           "required": true,
-          "type": "string[]"
+          "type": "array"
         }
       },
       "url": "/user/emails"
